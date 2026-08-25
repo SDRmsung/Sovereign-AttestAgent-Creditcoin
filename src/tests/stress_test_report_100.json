@@ -1,0 +1,87 @@
+{
+  "timestamp": "2026-08-25 13:44:22",
+  "total_tx": 100,
+  "approved": 77,
+  "rejected": 23,
+  "total_credit_usd": 15054205.989999995,
+  "tps": 3461.61957293177,
+  "status": "CODE_FROZEN",
+  "sample_logs": [
+    {
+      "tx_id": 1,
+      "status": "APPROVED",
+      "borrower": "0x3c949f486bd7485690ed8aa67df993dd0c875482",
+      "credit_usd": 257381.79,
+      "nonce": 10001,
+      "signature_hash": "0xafa7960b0b2dcc5de7..."
+    },
+    {
+      "tx_id": 2,
+      "status": "REJECTED_BY_FUSE",
+      "borrower": "0xb86e42d53a186dda9e5e626a09966da6d7cfd36a",
+      "reason": "TRIZ Risk Threshold Exceeded"
+    },
+    {
+      "tx_id": 3,
+      "status": "APPROVED",
+      "borrower": "0xda7cc697c9ef5e83df437bf221760efbd246aec1",
+      "credit_usd": 79263.67,
+      "nonce": 10003,
+      "signature_hash": "0x797b6cfe5ade0679ce..."
+    },
+    {
+      "tx_id": 4,
+      "status": "REJECTED_BY_FUSE",
+      "borrower": "0x726e9e73629b81c644b428ef641e57bf9e8fabaf",
+      "reason": "TRIZ Risk Threshold Exceeded"
+    },
+    {
+      "tx_id": 5,
+      "status": "APPROVED",
+      "borrower": "0xf4c3acbd8ae1f543100f4ab0f58b2af0e8669d34",
+      "credit_usd": 286675.84,
+      "nonce": 10005,
+      "signature_hash": "0xe515bf5b267a2fceec..."
+    },
+    {
+      "tx_id": 6,
+      "status": "APPROVED",
+      "borrower": "0x443237890e60b37636017b8fdab988335cdd64e2",
+      "credit_usd": 314990.2,
+      "nonce": 10006,
+      "signature_hash": "0xb082e427d5a1f57c9e..."
+    },
+    {
+      "tx_id": 7,
+      "status": "APPROVED",
+      "borrower": "0x9fecd80fcabc2c8f9e600258303a4323a76c0d48",
+      "credit_usd": 138779.68,
+      "nonce": 10007,
+      "signature_hash": "0xa8fa4c964cfbd2731b..."
+    },
+    {
+      "tx_id": 8,
+      "status": "APPROVED",
+      "borrower": "0xc441013391476b872ff39c53a947ed17d1171826",
+      "credit_usd": 36060.86,
+      "nonce": 10008,
+      "signature_hash": "0x8fd7ea718d1ce6835b..."
+    },
+    {
+      "tx_id": 9,
+      "status": "APPROVED",
+      "borrower": "0x454a5ff11a8e28c5473a2083a201c1723c1f9e67",
+      "credit_usd": 277847.87,
+      "nonce": 10009,
+      "signature_hash": "0x0dc07ded6aec8ca799..."
+    },
+    {
+      "tx_id": 10,
+      "status": "APPROVED",
+      "borrower": "0xf254451a2841e19cf63ac22244bd739e265f29a0",
+      "credit_usd": 89898.91,
+      "nonce": 10010,
+      "signature_hash": "0x4c993454dca4ba5c80..."
+    }
+  ]
+}

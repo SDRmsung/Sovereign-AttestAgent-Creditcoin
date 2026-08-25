@@ -79,12 +79,15 @@ The effective loan-to-value ratio $	ext{LTV}_{	ext{eff}}$ is governed by:
 
 $$	ext{LTV}_{	ext{eff}} = egin{cases} 
 0, & 	ext{if } F > 0.30 	ext{ or } 	ext{DefaultCount} > 0 \quad (	ext{TRIZ Fuse}) \
-	ext{LTV}_{	ext{base}} \cdot \left(0.80 + 0.20 \cdot \min\left(1.0, rac{S_2}{0.10 \cdot S_1}ight)ight), & 	ext{otherwise}
+	ext{LTV}_{	ext{base}} \cdot \left(0.80 + 0.20 \cdot \min\left(1.0, rac{S_2}{0.10 \cdot S_1}
+ight)
+ight), & 	ext{otherwise}
 \end{cases}$$
 
 The authorized credit line $C = S_1 \cdot 	ext{LTV}_{	ext{eff}}$ is encapsulated into an immutable Attestcoin message:
 
-$$\mathcal{H} = 	ext{keccak256}\left(	ext{SchemaID} \,\|\, 	ext{Recipient} \,\|\, C \,\|\, T_{	ext{valid}} \,\|\, 	ext{Nonce} \,\|\, 	ext{ChainID}ight)$$
+$$\mathcal{H} = 	ext{keccak256}\left(	ext{SchemaID} \,\|\, 	ext{Recipient} \,\|\, C \,\|\, T_{	ext{valid}} \,\|\, 	ext{Nonce} \,\|\, 	ext{ChainID}
+ight)$$
 
 ---
 

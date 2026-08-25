@@ -12,3 +12,8 @@ venv/
 # IDE
 .vscode/
 .idea/
+
+# Internal Knowledge & Localized Documentation (Do not push to public)
+*_ZH.md
+*_zh.md
+01-BUIDL_CTC*

@@ -5,13 +5,19 @@ import "./IAttestcoinVerifier.sol";
 
 /**
  * @title SovereignAttestLending
- * @notice AI-TRIZ Sovereign Autonomous Lending Contract on Creditcoin.
+ * @notice AI-TRIZ Sovereign Autonomous Lending & RWA Settlement Contract on Creditcoin.
  * Consumes Attestcoin Protocol proofs to grant credit and execute loans without human intervention.
+ * Enforces strict ReentrancyGuard and EIP-191 / EIP-712 anti-replay idempotency.
  */
 contract SovereignAttestLending {
     address public owner;
     address public attestcoinValidator;
     bytes32 public constant RWA_CREDIT_SCHEMA = keccak256("AI_TRIZ_SOVEREIGN_CREDIT_V1");
+
+    // Reentrancy Guard State
+    uint256 private _status;
+    uint256 private constant _NOT_ENTERED = 1;
+    uint256 private constant _ENTERED = 2;
 
     mapping(bytes32 => bool) public executedAttestations;
     mapping(address => uint256) public userCreditLimits;
@@ -26,9 +32,17 @@ contract SovereignAttestLending {
         _;
     }
 
+    modifier nonReentrant() {
+        require(_status != _ENTERED, "ReentrancyGuard: reentrant call");
+        _status = _ENTERED;
+        _;
+        _status = _NOT_ENTERED;
+    }
+
     constructor(address _validator) {
         owner = msg.sender;
         attestcoinValidator = _validator;
+        _status = _NOT_ENTERED;
     }
 
     function setValidator(address _newValidator) external onlyOwner {
@@ -49,7 +63,7 @@ contract SovereignAttestLending {
         uint256 validUntil,
         uint256 nonce,
         bytes calldata signature
-    ) external {
+    ) external nonReentrant {
         require(block.timestamp <= validUntil, "Attestation expired");
         
         bytes32 attestationHash = keccak256(
@@ -69,13 +83,13 @@ contract SovereignAttestLending {
         emit AttestationProcessed(recipient, creditLimit, nonce);
     }
 
-    function borrow(uint256 amount) external {
+    function borrow(uint256 amount) external nonReentrant {
         require(userBorrowedAmounts[msg.sender] + amount <= userCreditLimits[msg.sender], "Exceeds credit limit");
         userBorrowedAmounts[msg.sender] += amount;
         emit LoanDisbursed(msg.sender, amount);
     }
 
-    function repay(uint256 amount) external {
+    function repay(uint256 amount) external nonReentrant {
         require(userBorrowedAmounts[msg.sender] >= amount, "Repaying more than borrowed");
         userBorrowedAmounts[msg.sender] -= amount;
         emit LoanRepaid(msg.sender, amount);

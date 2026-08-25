@@ -124,6 +124,19 @@ During our 100-batch end-to-end stress test across real-world collateral profile
 
 ---
 
-## 📜 7. License
+
+---
+
+## 👥 7. Team & Contact
+
+* **Lead Maintainer**: `@SDRmsung` ([GitHub Profile](https://github.com/SDRmsung))
+* **Organization**: AI-TRIZ Sovereign Collective
+* **Target Competition Track**: BUIDL CTC 2026 Fall (AI ✕ RWA / DeFi)
+* **Feedback & Inquiries**: Open an issue on this repository or reach out via [DoraHacks BUIDL Profile](https://dorahacks.io/hackathon/buidl-ctc-2026-fall/buidl).
+
+---
+
+## 📜 8. License
+
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

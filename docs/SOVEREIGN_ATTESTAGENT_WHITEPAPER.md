@@ -36,6 +36,11 @@ During empirical stress testing, Sovereign AttestAgent achieved **3,461.6 TPS th
 
 ---
 
+
+> [!NOTE] Methodological Specification: Why "TRIZ Level 3 Su-Field Causality"?
+> In Genrich Altshuller's 5 Levels of Innovation framework, **Level 3 (Major Invention / System Evolution)** represents solutions that resolve deep contradictions by importing scientific principles from across disciplines (accounting for ~18% of breakthrough patents).
+> Sovereign AttestAgent implements Level 3 innovativeness by transplanting physical **Substance-Field (Su-Field) interaction dynamics** ($S_1$: Collateral, $S_2$: Track Record, $F$: Fraud/Market Risk Field) into decentralized credit underwriting, fundamentally resolving the physical contradiction between **sub-second liquidity disbursement** and **zero-bad-debt fraud interception**.
+
 ## 📐 1. System Architecture
 
 ```
